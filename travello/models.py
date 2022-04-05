@@ -5,16 +5,22 @@ class product(models.Model):
     name    = models.CharField(max_length=100)
     img     = models.ImageField(upload_to='pics')
     desc    = models.TextField()
-    price   = models.IntegerField()
+    price   = models.DecimalField(max_digits=4,decimal_places=2,default=0.00)
     offer   = models.BooleanField(default=False)
-    #offer_price = models.IntegerField()
+    offer_price = models.DecimalField(max_digits=4,decimal_places=2,default=0.00)
+
+    def __str__(self):
+        return str(self.name)
 
 
 class contact(models.Model):
     name     = models.CharField(max_length=100)
-    phone_no = models.IntegerField()
-    email_ID = models.CharField(max_length=100)
+    phone_no = models.IntegerField(max_length=10)
+    email_ID = models.EmailField(max_length=100)
     message  = models.TextField()
+
+    def __str__(self):
+        return str(self.name)
 
 class slide01(models.Model):
     ttl1    = models.CharField(max_length=10)
@@ -22,8 +28,14 @@ class slide01(models.Model):
     img     = models.ImageField(upload_to='slide01/pics')
     desc    = models.TextField()
 
+    def __str__(self):
+        return str(self.ttl1)
+
 class slide02(models.Model):
     ttl1    = models.CharField(max_length=10)
     ttl2    = models.CharField(max_length=10)
     img     = models.ImageField(upload_to='slide02/pics')
     desc    = models.TextField()
+
+    def __str__(self):
+        return str(self.ttl2)
