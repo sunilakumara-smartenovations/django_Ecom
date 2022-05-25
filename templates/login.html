@@ -9,16 +9,17 @@
 </head>
 <body>
 
-    <form action ="login" method="post">
+    <form action ="login" method="POST">
 
   <div class="form container">
     <form action="">
+
         {% csrf_token %}
         <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Username" name="username" required><br>
+        <input type="text" placeholder="phone_no" name="phone_no" required><br>
 
-        <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="password" name="password" required><br>
+        <!-- <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="password" name="password" required><br> -->
 
         <input type="Submit">
 

@@ -149,3 +149,9 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 #STATICFILES_STORAGE = 'static'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+ACCOUNT_SID = 'AC77c37d9f237c30672df7fd2a205e9ec0'
+AUTH_TOKEN = 'c307f719b8eca901a87180857243fa73'

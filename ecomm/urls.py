@@ -17,17 +17,28 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from accounts.views import *
 
 
-
-
-urlpatterns = [
-    path('',include('travello.urls')),
-    #path('product/', include('product.urls')),
-    path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
-    path('contact/', include('contact.urls')),
-    #path('',include('product.urls')),
+urlpatterns =[
+    path('api/', include('accounts.urls')),
+    path('register/',register_view),
+    path('dashboard/',dashboard_view),
+    path('otp/<uid>',otp),
+    path('admin/',admin.site.urls)
 ]
+
+
+
+
+
+# urlpatterns = [
+#     path('',include('travello.urls')),
+#     #path('product/', include('product.urls')),
+#     path('admin/', admin.site.urls),
+#     path('accounts/', include('accounts.urls')),
+#     path('contact/', include('contact.urls')),
+#     #path('',include('product.urls')),
+# ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
